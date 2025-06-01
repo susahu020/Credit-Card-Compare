@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="UTF-8">
+	<title>Team Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/CSS_File/teamDashboardViewStyle.css">
+	
+</head>
+<body>
+	<header>
+		<a class="headerTag" href="/teamDashboard1"><h1>Team Dashboard</h1></a>
+		<nav>
+			<ul>
+				<li><a href="backTeamDashboard">Back</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+	<section class="overview">
+		<h2>Reward and Benefit</h2>
+		<table>
+				<thead>
+					<tr>
+						<th>Card Type</th>
+						<th>welcomeBenefits</th>
+						<th>rewardRate</th>
+						<th>movieAndDining</th>
+						<th>rewardPoints</th>
+						<th>travel</th>
+						<th>domesticLounge</th>
+						<th>internationalLounge</th>
+						<th>fuel</th>
+						<th>golf</th>
+						<th>insuranceBenefits</th>
+						<th>zeroLiabilityProtection</th>
+						<th colspan="2">Action</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="card : ${cards}">
+					<td th:text="${card.cardName}"></td>
+                	<td th:text="${card.rewardBenefit.welcomeBenefits}"></td>
+                	<td th:text="${card.rewardBenefit.rewardRate}"></td>
+                	<td th:text="${card.rewardBenefit.movieAndDining}"></td>
+                	<td th:text="${card.rewardBenefit.rewardPoints}"></td>
+                	<td th:text="${card.rewardBenefit.travel}"></td>
+                	<td th:text="${card.rewardBenefit.domesticLounge}"></td>
+                	<td th:text="${card.rewardBenefit.internationalLounge}"></td>
+                	<td th:text="${card.rewardBenefit.fuel}"></td>
+                	<td th:text="${card.rewardBenefit.golf}"></td>
+                	<td th:text="${card.rewardBenefit.insuranceBenefits}"></td>
+                	<td th:text="${card.rewardBenefit.zeroLiabilityProtection}"></td>
+                	<td><a th:href="@{/rewardAndBenefit/edit/{id}(id=${card.rewardBenefit.rewardBenefitsId})}">Edit</a></td>
+                	
+				</tbody>
+		</table>
+	</section>
+		
+		<section class="overview">
+				<h2>Fee and Charges</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Card Type</th>
+							<th>joiningFee</th>
+							<th>renewalFee</th>
+							<th>spendBasedWaiver</th>
+							<th>rewardsRedemptionFee</th>
+							<th>interestRates</th>
+							<th>foreignCurrencyMarkup</th>
+							<th>fuelSurcharge</th>
+							<th>cashAdvanceCharge</th>
+							<th>addOnCardFee</th>
+							<th colspan="2">Action</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="card : ${cards}">
+						<td th:text="${card.cardName}"></td>
+						<td th:text="${card.feesAndCharge.joiningFee}"></td>
+						<td th:text="${card.feesAndCharge.renewalFee}"></td>
+						<td th:text="${card.feesAndCharge.spendBasedWaiver}"></td>
+						<td th:text="${card.feesAndCharge.rewardsRedemptionFee}"></td>
+						<td th:text="${card.feesAndCharge.interestRates}"></td>
+						<td th:text="${card.feesAndCharge.foreignCurrencyMarkup}"></td>
+						<td th:text="${card.feesAndCharge.fuelSurcharge}"></td>
+						<td th:text="${card.feesAndCharge.cashAdvanceCharge}"></td>
+						<td th:text="${card.feesAndCharge.addOnCardFee}"></td>
+						<td><a th:href="@{/feesAndCharges/edit/{id}(id=${card.feesAndCharge.feesAndChargesId})}">Edit</a></td>
+						
+					</tbody>
+				</table>
+			 
+			</section>
+			
+			
+		
+	</main>
+	<footer>
+		<p>&copy; 2025 Team Dashboard</p>
+	</footer>
+</body>
+</html>

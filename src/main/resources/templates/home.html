@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Compare</title>
+	<link rel="icon" type="image/x-icon" href="/image/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="/CSS_File/homeStyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <span th:include="header"></span>
+      <div class="hero-container">
+          
+          <div class="mainDiv">
+            <div class="leftside">
+              <p class="leftside_first">Find The Right</p>
+              <p class="leftside_second"><span class="role" th:text="${role}"></span></p>
+              
+              
+              <script th:inline="javascript">
+                var typeData = new Typed(".role", {
+                  strings: [
+                    "Credit Card"
+                  ],
+                  loop: true,
+                  typeSpeed: 150,
+                  backSpeed: 100,
+                  backDelay: 1200,
+                });
+              </script>
+              
+              
+              
+              <p class="leftside_p">
+                Compare India's best credit cards under one roof and apply for the
+                one that fits your needs.
+              </p>
+            </div>
+            <div class="rightside">
+              <img src="/image/slider.png.webp" alt="" />
+            </div>
+          </div>
+
+          <section class="second">
+            <div class="secondDiv">
+              <h2>Top Credit Card Categories</h2>
+              <p>
+                As a leading credit card comparison website, we've partnered with
+                all major credit card issuers in India. Select one of them below to
+                get started now:
+              </p>
+              <div class="card">
+                <a href="/categoriesPage/1"><div class="card1">
+                  <span class="material-symbols-outlined">credit_card</span>
+                  <p>Best Credit Card</p>
+                </div></a>
+                <a href="/categoriesPage/2"><div class="card2">
+                  <span class="material-symbols-outlined">social_leaderboard</span>
+                  <p>Rewards</p>
+                </div></a>
+                <a href="/categoriesPage/3"><div class="card3">
+                  <span class="material-symbols-outlined">payments</span>
+                  <p>Cash Back</p>
+                </div></a>
+                <a href="/categoriesPage/6"><div class="card4">
+                  <span class="material-symbols-outlined">flight</span>
+                  <p>Secured</p>
+                </div></a>
+                <a href="/categoriesPage/4"><div class="card5">
+                  <span class="material-symbols-outlined">local_gas_station</span>
+                  <p>Fuel</p>
+                </div></a>
+                <a href="/categoriesPage/5"><div class="card6">
+                  <span class="material-symbols-outlined">savings</span>
+                  <p>Life Time Free</p>
+                </div></a>
+                
+              </div>
+            </div>
+          </section>
+
+          <section class="forth">
+            <div class="forthDiv">
+              <h2>Most Popular Credit Cards</h2>
+              <p>
+                We partner with all major credit card issuers to make sure you see
+                as many great offers as possible. Select one of the names below to
+                begin your search.
+              </p>
+            </div>
+          </section>
+
+          <section class="tableSection">
+            <div class="tableSectionFirsttop">
+              <div class="tableSectionFirsttop1">
+                <p>Most Popular Ecommerce Card</p>
+              </div>
+              <div class="tableSectionFirsttop1">
+                <p>LifeTime Free Credit Card</p>
+              </div>
+              <div class="tableSectionFirsttop1">
+                <p>Most Popular Travel Card</p>
+              </div>
+            </div>
+            <div class="tableSectionFirst">
+              <div class="tableSectionFirst1">
+                <div class="tableimage">
+                  <a th:href="${'/cardDetail/'+firstCard.cardid}" ><img th:src="@{${'/image/'+firstCard.imagePath}}" alt="image not found"></a>
+                </div>
+                <div class="tableimageTitle">
+                  <p th:text="${firstCard.cardName}"></p>
+                </div>
+                <div class="tableJoiningFee">
+                  <p>Joining Fee</p>
+                </div>
+                <div class="tableJoiningFeeText">
+                  <p th:text="${firstCard.feesAndCharge.joiningFee}">N/A</p>
+                </div>
+                <div class="tableRewardRate">
+                  <p>Rewards Rate</p>
+                </div>
+                <div class="tableRewardRateText">
+                  <p th:text="${firstCard.rewardBenefit.rewardRate}"></p>
+                </div>
+                <div class="tablebutton">
+                  <a th:href="@{${firstCard.urlPath}}" ><button>Apply Now</button></a>
+                </div>
+              </div>
+
+              <div class="tableSectionFirst2">
+                <div class="tableimage">
+                  <a th:href="${'/cardDetail/'+secondCard.cardid}" ><img th:src="@{${'/image/'+secondCard.imagePath}}" alt=""></a>
+                </div>
+                <div class="tableimageTitle">
+                  <p th:text="${secondCard.cardName}"></p>
+                </div>
+                <div class="tableRating"></div>
+                <div class="tableJoiningFee">
+                  <p>Joining Fee</p>
+                </div>
+                <div class="tableJoiningFeeText">
+                  <p th:text="${secondCard.feesAndCharge.joiningFee}">N/A</p>
+                </div>
+                <div class="tableRewardRate">
+                  <p>Rewards Rate</p>
+                </div>
+                <div class="tableRewardRateText">
+                  <p th:text="${secondCard.rewardBenefit.rewardRate}"></p>
+                </div>
+                <div class="tablebutton">
+                  <a th:href="@{${secondCard.urlPath}}" ><button>Apply Now</button></a>
+                </div>
+              </div>
+              <div class="tableSectionFirst3">
+                <div class="tableimage">
+                  <a th:href="${'/cardDetail/'+thirdCard.cardid}" ><img th:src="@{${'/image/'+thirdCard.imagePath}}" alt=""></a>
+                </div>
+                <div class="tableimageTitle">
+                  <p th:text="${thirdCard.cardName}"></p>
+                </div>
+                <div class="tableRating"></div>
+                <div class="tableJoiningFee">
+                  <p>Joining Fee</p>
+                </div>
+                <div class="tableJoiningFeeText">
+                  <p th:text="${thirdCard.feesAndCharge.joiningFee}">N/A</p>
+                </div>
+                <div class="tableRewardRate">
+                  <p>Rewards Rate</p>
+                </div>
+                <div class="tableRewardRateText">
+                  <p th:text="${thirdCard.rewardBenefit.rewardRate}"></p>
+                </div>
+                <div class="tablebutton">
+                  <a th:href="@{${thirdCard.urlPath}}" ><button>Apply Now</button></a>
+                </div>
+              </div>
+              
+            </div>
+          </section>
+
+          <section class="tableSection">
+            <div class="tableSectionFirsttop">
+              <div class="tableSectionFirsttop1">
+                <p>Most Popular Ecommerce Card</p>
+              </div>
+              <div class="tableSectionFirsttop1">
+                <p>LifeTime Free Credit Card</p>
+              </div>
+              <div class="tableSectionFirsttop1">
+                <p>Most Popular Travel Card</p>
+              </div>
+            </div>
+            <div class="tableSectionFirst">
+              <div class="tableSectionFirst1">
+                <div class="tableimage">
+                  <a th:href="${'/cardDetail/'+forthCard.cardid}" ><img th:src="@{${'/image/'+forthCard.imagePath}}" alt=""></a>
+                </div>
+                <div class="tableimageTitle">
+                  <p th:text="${forthCard.cardName}"></p>
+                </div>
+                <div class="tableRating"></div>
+                <div class="tableJoiningFee">
+                  <p>Joining Fee</p>
+                </div>
+                <div class="tableJoiningFeeText">
+                  <p th:text="${forthCard.feesAndCharge.joiningFee}">N/A</p>
+                </div>
+                <div class="tableRewardRate">
+                  <p>Rewards Rate</p>
+                </div>
+                <div class="tableRewardRateText">
+                  <p th:text="${forthCard.rewardBenefit.rewardRate}"></p>
+                </div>
+                <div class="tablebutton">
+                  <a th:href="@{${forthCard.urlPath}}" ><button>Apply Now</button></a>
+                </div>
+              </div>
+
+              <div class="tableSectionFirst2">
+                <div class="tableimage">
+                  <a th:href="${'/cardDetail/'+fiveCard.cardid}" ><img th:src="@{${'/image/'+fiveCard.imagePath}}" alt=""></a>
+                </div>
+                <div class="tableimageTitle">
+                  <p th:text="${fiveCard.cardName}"></p>
+                </div>
+                <div class="tableRating"></div>
+                <div class="tableJoiningFee">
+                  <p>Joining Fee</p>
+                </div>
+                <div class="tableJoiningFeeText">
+                  <p th:text="${fiveCard.feesAndCharge.joiningFee}">N/A</p>
+                </div>
+                <div class="tableRewardRate">
+                  <p>Rewards Rate</p>
+                </div>
+                <div class="tableRewardRateText">
+                  <p th:text="${fiveCard.rewardBenefit.rewardRate}"></p>
+                </div>
+                <div class="tablebutton">
+                  <a th:href="@{${fiveCard.urlPath}}" ><button>Apply Now</button></a>
+                </div>
+              </div>
+              <div class="tableSectionFirst3">
+                <div class="tableimage">
+                  <a th:href="${'/cardDetail/'+sixCard.cardid}" ><img th:src="@{${'/image/'+sixCard.imagePath}}" alt=""></a>
+                </div>
+                <div class="tableimageTitle">
+                  <p th:text="${sixCard.cardName}"></p>
+                </div>
+                <div class="tableRating"></div>
+                <div class="tableJoiningFee">
+                  <p>Joining Fee</p>
+                </div>
+                <div class="tableJoiningFeeText">
+                  <p th:text="${sixCard.feesAndCharge.joiningFee}">N/A</p>
+                </div>
+                <div class="tableRewardRate">
+                  <p>Rewards Rate</p>
+                </div>
+                <div class="tableRewardRateText">
+                  <p th:text="${sixCard.rewardBenefit.rewardRate}"></p>
+                </div>
+                <div class="tablebutton">
+                  <a th:href="@{${sixCard.urlPath}}" ><button>Apply Now</button></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="forth">
+            <div class="forthDiv">
+              <h2>Top Credit Card Issuers</h2>
+              <p>
+                We partner with all major credit card issuers to make sure you see
+                as many great offers as possible. Select one of the names below to
+                begin your search.
+              </p>
+            </div>
+          </section>
+          <section class="five">
+            <div class="fiveFirst">
+              <a href="/categoriesPageBank/2"><div class="fiveDivCard1">HDFC Bank</div></a>
+              <a href="/categoriesPageBank/1"><div class="fiveDivCard2">AXIS Bank</div></a>
+              <a href="/categoriesPageBank/56"><div class="fiveDivCard3">ICICI Bank</div></a>
+              <a href="/categoriesPageBank/54"><div class="fiveDivCard4">Bank of Baroda</div></a>
+            </div>
+            <div class="fiveSecond">
+              <a href="/categoriesPageBank/55"><div class="fiveDivCard5">SBI Cards</div></a>
+              <a href="/categoriesPageBank/53"><div class="fiveDivCard6">IDFC Bank</div></a>
+              <a href="/categoriesPageBank/57"><div class="fiveDivCard7">CITI Bank</div></a>
+              <a href="/categoriesPageBank/52"><div class="fiveDivCard8">AU Bank</div></a>
+            </div>
+          </section>
+          <section class="six">
+            <div class="sixFirst">
+              <p class="sixP1">ABOUT US</p>
+              <p class="sixP2">
+                With so many credit cards in the market offering different rewards
+                and cashback benefits, and each of them loaded with profuse and
+                confusing terms and conditions, we at Card Insider understand that
+                choosing the right card can be really overwhelming.
+              </p>
+              <p class="sixP3">
+                Whether you are a young professional or a student who has just
+                started their credit journey and has not even an iota of a clue as
+                to how credit cards work and how to build a strong credit profile or
+                a financially stable business person who has no time to sift through
+                banks' websites and read all the details and terms and conditions
+                before applying for a credit card, CardInsider will make the task
+                easier for you, and that's our PROMISE! Consider us your personal
+                credit card advisor.
+              </p>
+            </div>
+            <div class="sixSecond"><img class="sixImage" src="image/about-us.webp" alt=""></div>
+          </section>
+          
+          
+          
+      
+      </div>
+      <div th:include="footer"></div>
+    </div>
+  </body>
+</html>

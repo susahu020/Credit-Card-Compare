@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Detail</title>
+    
+    <link rel="stylesheet" href="/CSS_File/categoriesPageStyle.css" th:href="@{/CSS_File/categoriesPageStyle.css}" />
+    
+  
+</head>
+<body>
+    <div class="container">
+        <div class="topHeading">
+            <div class="topHeadingContent">
+                <p>Best Credit Cards in India 2025</p>
+                <a href="/home" class="back_icon"><p>Back</p></a>
+            </div>
+            
+            
+        </div>
+
+        <div class="firstTextArea">
+            <div class="firstTextAreaContent">
+                <p>An ideal credit card is supposed to have a high reward rate, and offer complimentary benefits like access to airport lounges, golf rounds/lessons, etc, at a very less or zero membership fee. But that sounds like a very utopian idea. It's not monetarily feasible for card issuers to offer such a rewarding credit card that too at a nominal membership fee. Therefore, what they do instead is, offer the best credit cards offering benefits in different categories so that individuals may choose a credit card based on their spending habits. No single credit card can be termed as “the best credit card” for everyone, but it can vary based on the requirements and spending behavior of individuals. Therefore, keeping all the segments of people in mind, we have come up with a list of the best credit cards in India.</p>
+                <br><br>
+                <p>Applying for a credit card without good research is never a good idea. You should understand your spending habits first and then go with a card that fits you the best. With thousands of credit card options available in the market, it becomes difficult for people to filter out the best cards and apply for one of them. To help you with choosing the best credit card in India, we are here with this article. Keep reading for further information:</p>
+            </div>
+        </div>
+
+        <div class="mainContainer">
+            <div class="firstTopHeading">
+                <p>List of Best Credit Cards in India 2025</p>
+            </div>
+            <div class="firstTopTextArea">
+                <p>Once you have figured out which category of credit card you would fulfil your needs the best, you need to filter out the best credit cards in the category you are looking for. We have made the task simpler for you. We have curated a list of best credit cards available in India 2023 from each category currently available in the market.</p>
+            </div>
+            
+            
+            <div th:each="card : ${cards}">
+            <div class="firstDiv">
+                <div class="firstDivHeader">
+                <!-- <p><span th:text="${card.cardid}" /></p> -->
+                    <div class="fisrtDivHeaderText">
+                        <p><span th:text="${card.bank.bankName}" ></p>
+                    </div>
+                    <div class="firstDivHeaderButton">
+                        <a th:href="@{${card.urlPath}}" ><button>Apply Now</button></a>
+                    </div>
+                </div>
+                <div class="secondDivContent">
+                    <div class="secondDivContentBox1">
+                        <div class="secondDivContaintBox1img">
+                            <a th:href="${'/cardDetail/'+card.cardid}" ><img th:src="@{${'/image/'+card.imagePath}}" alt="image not found"></a>
+                            
+                        </div>
+                    </div>
+                    <div class="secondDivContentBox2">
+                        <div class="secondDivContentBox2Heading">
+                            <p>Welcome Benefits</p>
+                        </div>
+                        <div class="secondDivContentBox2Text">
+                            <p><span th:text="${card.rewardBenefit.welcomeBenefits}" /></p>
+                        </div>
+                    </div>
+                    <div class="secondDivContentBox3">
+                        <div class="secondDivContentBox2Heading">
+                            <p>Rewards Rate</p>
+                        </div>
+                        <div class="secondDivContentBox2Text">
+                            <p><span th:text="${card.rewardBenefit.rewardRate}" /></p>
+                        </div>
+                    </div>
+                    <div class="secondDivContentBox4">
+                        <div class="secondDivContentBox2Heading">
+                            <p>Joining Fees</p>
+                        </div>
+                        <div class="secondDivContentBox2Text">
+                            <p><span th:text="${card.feesAndCharge.joiningFee}" /></p>          
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+            
+        </div>
+    </div>
+    </body>
+
+</html>

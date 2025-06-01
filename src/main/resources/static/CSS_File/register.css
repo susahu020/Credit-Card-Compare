@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container{
+    background-color: rgb(227, 233, 217);
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container h1{
+    text-shadow: 2px 1px 3px rgb(73, 73, 73);
+}
+h1{
+    margin-top: 3rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5rem;
+}
+.loginpage{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+.user{
+    border-radius: 0.3rem;
+    background-color: rgb(228, 217, 238);
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    padding: 12px;
+    box-shadow: 3px 3px 3px rgb(142, 192, 142);
+}
+
+.user a{
+    text-decoration: none ;
+}
+.user h3:hover{
+    color: rgb(129, 118, 230);
+    transition-duration: 1s;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+.user h3{
+    margin-top: 15px;
+}
+.team{
+    border-radius: 0.3rem;
+    background-color: rgb(228, 217, 238);
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    padding: 12px;
+    box-shadow: 3px 3px 3px rgb(142, 192, 142);
+}
+
+.team a{
+    text-decoration: none ;
+}
+.team h3:hover{
+    color: rgb(129, 118, 230);
+    transition-duration: 1s;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+.team h3{
+    margin-top: 15px;
+}
+
+.admin{
+    border-radius: 0.3rem;
+    background-color: rgb(228, 217, 238);
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    padding: 12px;
+    box-shadow: 3px 3px 3px rgb(142, 192, 142);
+}
+
+.admin a{
+    text-decoration: none ;
+}
+.admin h3:hover{
+    color: rgb(129, 118, 230);
+    transition-duration: 1s;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+.admin h3{
+    margin-top: 15px;
+}
+
+.back{
+    margin-top: 5rem;
+    text-align: center;
+}

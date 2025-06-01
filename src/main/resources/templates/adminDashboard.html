@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/CSS_File/adminDashboardStyle.css">
+</head>
+<body>
+	
+	<header>
+		<h1>Admin Dashboard</h1>
+		<nav>
+			<ul>
+				
+				<li><a href="/logoutAdmin">Logout</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<span class="userIdFirst">Hi <span class="userId" th:text="${session.adminName}"></span></span><span>, Welcome back!</span>
+	
+		<div class="first">
+			<div class="second">
+				<section class="overview">
+			<h2>Bank List</h2>
+			<div class="card">
+				<table>
+				<thead>
+					<tr>
+						<th>Bank Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="bank : ${bank}">
+                	<td th:text="${bank.bankName}"></td>
+					<td><a style="text-decoration:none" th:href="@{/bankStatusAccept/{id}(id=${bank.bankid})}">Accept</a></td>					
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</section>
+		<section class="user-list">
+			<h2>Card List</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr>
+						<th>Bank Name</th>
+						<th>Card Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="card : ${card}">
+					<td th:text="${card.Bank.bankName}"></td>
+                	<td th:text="${card.cardName}"></td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/cardStatusAccept/{id}(id=${card.cardid})}">Accept</a></td>
+                	
+                	
+					</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+			<div class="third">
+			<section class="user-list">
+			<h2>Contact Info</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr class="last">
+						<th>Name</th>
+						<th>Email</th>
+						<th>Subject</th>
+						<th>Message</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="contact : ${contacts}">
+					<td th:text="${contact.name}"></td>
+                	<td th:text="${contact.email}"></td>
+                	<td th:text="${contact.subject}"></td>
+                	<td th:text="${contact.message}"></td>
+                	</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+		</div>
+		<div class="forthMain">
+			<div class="forthMainLeft">
+			<section class="user-list">
+			<h2>Team List</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr class="last">
+						<th>Name</th>
+						<th>Email</th>
+						<th>Mobile</th>
+						<th>Address</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="team : ${teamPending}">
+					<td th:text="${team.fullName}"></td>
+                	<td th:text="${team.email}"></td>
+                	<td th:text="${team.mobileNumber}"></td>
+                	<td th:text="${team.fullAddress}"></td>
+                	<td><a style="text-decoration:none" th:href="@{/teamStatusAccept/{id}(id=${team.userId})}">Accept</a> | 
+                	<a style="text-decoration:none" th:href="@{/teamStatusReject/{id}(id=${team.userId})}">Reject</a>
+                	</td>
+                	</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+			<div class="forthMainRight">
+			<section class="user-list">
+			<h2>Team Info</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr class="last">
+						<th>Name</th>
+						<th>Email</th>
+						<th>Mobile</th>
+						<th>Address</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="team : ${teamAccept}">
+					<td th:text="${team.fullName}"></td>
+                	<td th:text="${team.email}"></td>
+                	<td th:text="${team.mobileNumber}"></td>
+                	<td th:text="${team.fullAddress}"></td>
+                	</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

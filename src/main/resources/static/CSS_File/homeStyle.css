@@ -1,0 +1,271 @@
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-container{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+
+.mainDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 350px;
+  margin-top: 5%;
+}
+.leftside {
+  width: 40%;
+  height: 300px;
+}
+.rightside {
+  width: 40%;
+  height: 300px;
+  margin-top: 2%;
+}
+.leftside_first {
+  font-weight: bold;
+  font-size: 55px;
+  color: rgb(35, 28, 102);
+}
+.leftside_second {
+  margin-top: -60px;
+  font-weight: bold;
+  font-size: 55px;
+  color: rgb(51, 30, 235);
+}
+.leftside_p{
+    margin-top: -30px;
+}
+.rightside img {
+  width: 450px;
+}
+.second{
+    height: 300px;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+.secondDiv{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.card1,.card2,.card3,.card4,.card5,.card6{
+    
+    box-shadow: 0 5px 30px 0 rgba(96, 97, 99, 0.57);
+    padding-top: 10px;
+    border-radius: 7px;
+    height: 80px;
+    width: 150px;
+}
+.card div:hover{
+    transition-duration: 1s;  
+    background-color: rgb(154, 154, 233);
+    transform: translateY(-10px);
+    color: blue;
+}
+
+.forth{
+    text-align: center;
+    padding-top: 2rem;
+}
+.fiveFirst,.fiveSecond{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+.fiveDivCard1,.fiveDivCard2,.fiveDivCard3,.fiveDivCard4,.fiveDivCard5,.fiveDivCard6,.fiveDivCard7,.fiveDivCard8{
+    font-weight: bold;
+    padding-top: 9px;
+    text-align: center;
+    margin-right: 30px;
+    height: 30px;
+    width: 220px;
+    box-shadow: 0 3px 3px 0 rgba(100, 94, 196, 0.57);
+    padding-top: 10px;
+    border-radius: 7px;
+}
+.fiveDivCard1:hover,.fiveDivCard2:hover,.fiveDivCard3:hover,.fiveDivCard4:hover,.fiveDivCard5:hover,.fiveDivCard6:hover,.fiveDivCard7:hover,.fiveDivCard8:hover{
+    transition-duration: 1s;  
+    background-color: rgb(154, 154, 233);
+    transform: translateY(-8px);
+}
+
+
+
+
+.six{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 4rem
+}
+.sixImage{
+    width: 550px;
+    box-shadow: 0 5px 30px 0 rgba(96, 97, 99, 0.57);
+    border-radius: 5px;
+}
+.sixFirst{
+    width: 40%;
+}
+.sixSecond{
+    padding: 3%;
+    width: 40%;
+}
+.sixP1{
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+}
+.sixP2,.sixP3{
+    font-size: 19px;
+    color: #161616;
+    text-align: justify;
+}
+.tableSection{
+  margin-top: 50px;
+  width: 95%;
+  height: 600px;
+  margin-bottom: 30px;
+}
+.tableSectionFirsttop{
+  display: flex;
+  justify-content: space-between;
+}
+.tableSectionFirsttop1{
+  width: 400px;
+  height: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  color: blue;
+}
+
+
+.tableSectionFirst{
+  margin-top: 1%;
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+.tableSectionFirst1{
+  border-radius: 7px;
+  /* margin-left:10px;
+  padding-left: 10px;
+  padding-right: 10px; */
+  border: 1px solid rgb(189, 182, 182);
+  margin-right: 40px;
+  width: 400px;
+  height: 100%;
+}
+.tableSectionFirst1:hover{
+  box-shadow: 0 2px 10px 0 rgba(96, 97, 99, 0.57);
+  transition-duration: 0.5s; 
+}
+.tableSectionFirst2{
+  border-radius: 7px;
+  /* padding-left: 10px; */
+  padding-right: 10px;
+  margin-right: 40px;
+  width: 400px;
+  height: 100%;
+  border: 1px solid rgb(189, 182, 182);
+}
+.tableSectionFirst2:hover{
+  box-shadow: 0 2px 10px 0 rgba(96, 97, 99, 0.57);
+  transition-duration: 0.5s;
+}
+.tableSectionFirst3{
+  border-radius: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+  height: 100%;
+  border: 1px solid rgb(189, 182, 182);
+}
+.tableSectionFirst3:hover{
+  box-shadow: 0 2px 10px 0 rgba(96, 97, 99, 0.57);
+  transition-duration: 0.5s;
+}
+.tableimage{
+  margin-left: 25%;
+  margin-top: 10%;
+  border-radius: 5px;
+  width: 176px;
+  height: 111px;
+
+}
+.tableimage:hover{
+  box-shadow: 0 2px 10px 0 rgba(31, 32, 32, 0.57);
+}
+.tableimage img{
+  width: 276px;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.tableimageTitle{
+  text-align: center;
+  height: 30px;
+  font-size: 18px;
+}
+.tableJoiningFee{
+	margin-left:20px;
+  height: 30px;
+  color: blue;
+  font-weight: 500;
+}
+.tableJoiningFeeText{
+  margin-left:20px;
+  margin-top: -20px;
+  height: 30px;
+}
+.tableRewardRate{
+	margin-left:20px;
+  margin-top: 5px;
+  height: 30px;
+  color: blue;
+}
+.tableRewardRateText{
+  margin-top: -10px;
+  margin-left:20px;
+  margin-right:15px;
+  height: 120px;
+  overflow: hidden;
+}
+.tablebutton{
+  margin-top: 10px;
+  height: 50px;
+}
+.tablebutton button{
+  margin-left: 10%;
+  width: 280px;
+  height: 45px;
+  background-color: rgb(71, 156, 71);
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border-style: none;
+  cursor: pointer;
+}
+.tablebutton button:hover{
+  box-shadow: 0 2px 10px 0 rgba(31, 32, 32, 0.57);
+}
+a{
+	text-decoration: none;
+}
+
